@@ -21,6 +21,10 @@
     border-radius: 10px;
 }
 
+.likeImg {
+    object-fit: fill;
+}
+
 .card-body {
     justify-content: flex-start;
 }
