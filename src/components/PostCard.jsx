@@ -11,6 +11,9 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 // also, probably give user who posted?
 const PostCard = (props) => {
 
+    console.log('postcard props', props)
+
+    props = props.props;
     const [liked, setLiked] = useState(false);
     // const iconClass = liked? "liked" : "unliked"
 

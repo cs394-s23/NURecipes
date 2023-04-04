@@ -2,6 +2,9 @@
     display: flex;
     background-color: black;
     color: white;
+    margin-bottom: 50px;
+    width: 80vw;
+    height: 80vh;
     /* align-items: start; */
     /* align-content: flex-start; */
     /* justify-items: flex-start; */
@@ -49,12 +52,16 @@
 .card-image {
     width: 100%;
     margin-bottom: 20px;
+    max-height: 70%;
     /* border-radius: 5px; */
     /* border: 1px solid black; */
 }
 
 .recipe-image {
     border-radius: 5px;
+    max-height: 90%;
+    max-width: 90%; 
+    object-fit:fill;
 }
 
 .utility-bar {
