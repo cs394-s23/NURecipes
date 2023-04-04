@@ -5,6 +5,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: tomato; */
+
 }
 
 .card-image {
@@ -27,6 +29,9 @@
 
 .card-body {
     justify-content: flex-start;
+    padding-bottom: 20px;
+    /* padding-top: 15px; */
+    height: 120%;
 }
 .card-title {
     margin-top: 10px;
@@ -39,4 +44,28 @@
 .card-user {
     margin-bottom: 5px;
     text-align: left;
+}
+
+.unliked {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.liked {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+
+}
+
+.icon-img {
+    object-fit: contain;
+    padding-bottom: 15px;
+    max-width: 50px;
+    max-height: 50px;
 }
