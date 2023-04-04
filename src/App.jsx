@@ -3,13 +3,15 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useDbData } from './utilities/firebase';
 
 import Homepage from './components/Homepage.jsx'
 
-function App() {
+const App = () => {
+  const [data, error] = useDbData('/')
 
   return (
-    <Homepage/>
+    <Homepage data={data}/>
   )
 }
 
