@@ -21,7 +21,7 @@ const PostCard = (props) => {
                 <div className="card-title">{props.title}</div>
                 <div className="profile">
                     <div>
-                        <img src={props.profilePic} className="profile-pic"/>
+                        <img src={props.profile_pic_url} className="profile-pic"/>
                     </div>
                     <div className="card-user">{props.username}</div>
 
@@ -30,7 +30,7 @@ const PostCard = (props) => {
             
 
             <div className="card-image">
-                    <img src={props.image} alt="" className="recipe-image"/>
+                    <img src={props.image_url} alt="" className="recipe-image"/>
             </div>
     
             

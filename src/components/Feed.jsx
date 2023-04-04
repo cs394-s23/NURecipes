@@ -1,18 +1,18 @@
 import PostCard from "./PostCard.jsx"
-import Feed from "./Feed.jsx"
-import "./Homepage.css"
 
-const Homepage = ({data}) => {
+
+
+
+const Feed = ({data}) => {
     if (!data) {
         return <h1>Data is loading...</h1>;
     }
     return (
         <div>
-            < Feed data = {data} />
+            {data.map((post, index) => <PostCard props={post} key={index} />)}
         </div>
+        );
+    }
         
 
-    )
-}
-
-export default Homepage;
+export default Feed;

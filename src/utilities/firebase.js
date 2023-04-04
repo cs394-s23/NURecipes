@@ -29,7 +29,6 @@ export const db = getDatabase(app);
 export const useDbData = (path) => {
     const [data, setData] = useState();
     const [error, setError] = useState(null);
-    console.log(data)
     useEffect(() => (
       onValue(ref(db, path), (snapshot) => {
        setData( snapshot.val() );
