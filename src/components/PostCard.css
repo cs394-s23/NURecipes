@@ -1,6 +1,38 @@
 .card {
-
     width: 50vw;
+    min-height: 500px;
     height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.card-image {
+    width: 70%;
+
+    /* align-self: center; */
+    /* z-index: 999; */
+}
+
+.foodImg {
+    object-fit: fill;
+    max-width: 400px;
+    max-height: 400px;
+    border-radius: 10px;
+}
+
+.card-body {
+    justify-content: flex-start;
+}
+.card-title {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.card-text {
+    text-align: left;
+}
+.card-user {
+    margin-bottom: 5px;
+    text-align: left;
 }

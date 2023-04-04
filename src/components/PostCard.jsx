@@ -5,10 +5,11 @@ const PostCard = (props) => {
         <div className="card">
     
             <div className="card-body">
-                <h5 className="card-title">{props.title}</h5>
+            <h5 className="card-user">{props.username}</h5>
                 <div className="card-image">
-                    <img src={props.image} alt="" />
+                    <img src={props.image} className = "foodImg" alt="" />
                 </div>
+                <h5 className="card-title">{props.title}</h5>
                 <p className="card-text">{props.caption}</p>
                 <a href="#" className="btn btn-primary">View Recipe</a>
             </div>
