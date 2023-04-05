@@ -1,25 +1,35 @@
-// https://codebuckets.com/2021/08/08/bootstrap-modal-dialog-in-react-without-jquery/
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
-const Modal = ({ children, open, close }) => (
-    <div
-      className={`modal ${open ? 'modal-show' : ''}`}
-      tabIndex="-1"
-      role="dialog"
-      onClick={(evt) => { if (evt.target === evt.currentTarget) close(); }}
-    >
-      <div className="modal-dialog" role="document">
-        <div className="modal-content">
-          <div className="modal-header">
-            <button type="button" className="btn-close" aria-label="Close"
-              onClick={close}
-            />
-          </div>
-          <div className="modal-body">
-            {children}
-          </div>
-        </div>
-      </div>
-    </div>
+const Modal1 = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Launch demo modal
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
-  
-  export default Modal;
+}
+
+export default Modal1;

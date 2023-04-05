@@ -88,7 +88,8 @@ const PostCard = (props) => {
                         null
                     }
             </div>
-            <a href="#" className="btn btn-primary" onClick={() => {setShow(!show)}}>View Recipe</a>
+            {/* <a href="#" className="btn btn-primary" onClick={() => {setShow(!show)}}>View Recipe</a> */}
+            <Modal />
         </div>
 
         
