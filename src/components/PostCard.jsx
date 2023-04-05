@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import Modal from "./Modal.jsx"
+import Modal from "./PopUpModal.jsx"
 
 
 
@@ -89,7 +89,7 @@ const PostCard = (props) => {
                     }
             </div>
             {/* <a href="#" className="btn btn-primary" onClick={() => {setShow(!show)}}>View Recipe</a> */}
-            <Modal />
+            <Modal title = {props.title} ingredients = {props.recipe.ingredients} steps = {props.recipe.steps}/>
         </div>
 
         
