@@ -40,9 +40,9 @@ const PostCard = (props) => {
             <div className="utility-bar">
                 <div className="like-button">
                     {liked ?
-                        <FontAwesomeIcon icon={faHeartSolid} size="2xl" style={{color: "ff0000"}} onClick={() => {setLiked(false)}} />
+                        <FontAwesomeIcon icon={faHeartSolid} size="l" style={{color: "red"}} onClick={() => {setLiked(false)}} />
                         :
-                        <FontAwesomeIcon icon={faHeart} size="2xl" onClick={() => {setLiked(true)}} />
+                        <FontAwesomeIcon icon={faHeart} size="l" onClick={() => {setLiked(true)}} />
                         
                     }
                 </div>

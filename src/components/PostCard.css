@@ -19,6 +19,11 @@
     /* justify-content: space-between; */
 }
 
+.btn-primary {
+    align-self:center;
+    margin-top: auto;
+}
+
 .profile {
     display: flex;
     /* padding: 5px; */
@@ -91,13 +96,18 @@
 }
 
 .like-count {
-    font-size: xx-large;
+    font-size: 15px;
     padding-left: 10px;
     align-self: center;
 }
+/* svg {
+    width: 20px;
+    height: 20px;
+} */
 
 .like-button {
     align-self: center;
+   
 }
 
 
