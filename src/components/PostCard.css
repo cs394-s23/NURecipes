@@ -1,10 +1,10 @@
 .card {
     display: flex;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     margin-bottom: 50px;
-    width: 80vw;
-    height: 80vh;
+    width: 60vw;
+    height: 110vh;
     /* align-items: start; */
     /* align-content: flex-start; */
     /* justify-items: flex-start; */
@@ -52,16 +52,17 @@
 .card-image {
     width: 100%;
     margin-bottom: 20px;
-    max-height: 70%;
+    max-height: 80%;
     /* border-radius: 5px; */
     /* border: 1px solid black; */
 }
 
 .recipe-image {
     border-radius: 5px;
-    max-height: 90%;
-    max-width: 90%; 
-    object-fit:fill;
+    width: 100%;
+    height: 100%;
+    /* max-width: 90%;  */
+    object-fit:contain;
 }
 
 .utility-bar {
@@ -74,6 +75,15 @@
 
 }
 
+.like-count {
+    font-size: xx-large;
+    padding-left: 10px;
+    align-self: center;
+}
+
+.like-button {
+    align-self: center;
+}
 
 
 .card-title {
@@ -83,12 +93,21 @@
     font-size: 30px;
 }
 
-.card-text {
+.card-rating {
     display: flex;
     /* flex-direction: start; */
+    justify-content: flex-start;
     font-weight: normal;
     width: 800px;
     text-align: left;
     /* border: 1px solid yellow; */
     
+}
+
+.rating {
+    padding-right: 10px;
+}
+
+.card-caption {
+    text-align: left;
 }

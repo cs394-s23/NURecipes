@@ -46,11 +46,20 @@ const PostCard = (props) => {
                         
                     }
                 </div>
+                <div className = "like-count">
+                    {props.like_count} 
+                </div>
 
             </div>
                     
-            
-            <p className="card-text">{props.caption}</p>
+            <div className="card-rating">
+                <p className = "rating"> <strong>Cook time: </strong> {props.cook_time}</p>
+                <p className = "rating"> <strong> Cost: </strong> ${props.cost} </p>
+            </div>
+
+            <div className="card-caption">
+                {props.caption}
+            </div>
             
 
             {/* should this view recipe button take us to another page or just expand the card? */}
