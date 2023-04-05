@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
+import Modal from "./Modal.jsx"
 
 
 
@@ -16,6 +17,12 @@ const PostCard = (props) => {
     props = props.props;
     const [liked, setLiked] = useState(false);
     // const iconClass = liked? "liked" : "unliked"
+
+    
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <div className="card">
@@ -40,9 +47,9 @@ const PostCard = (props) => {
             <div className="utility-bar">
                 <div className="like-button">
                     {liked ?
-                        <FontAwesomeIcon icon={faHeartSolid} size="l" style={{color: "red"}} onClick={() => {setLiked(false)}} />
+                        <FontAwesomeIcon icon={faHeartSolid} size="lg" style={{color: "red"}} onClick={() => {setLiked(false)}} />
                         :
-                        <FontAwesomeIcon icon={faHeart} size="l" onClick={() => {setLiked(true)}} />
+                        <FontAwesomeIcon icon={faHeart} size="lg" onClick={() => {setLiked(true)}} />
                         
                     }
                 </div>
@@ -63,11 +70,29 @@ const PostCard = (props) => {
             
 
             {/* should this view recipe button take us to another page or just expand the card? */}
-            <a href="#" className="btn btn-primary">View Recipe</a>
+            <div className="modal-button">
+                    {show ?
+                            <div className="modal-dialog" role="document">
+                            <div className="modal-content">
+                            <div className="modal-header">
+                                <button type="button" className="btn-close" aria-label="Close"
+                                onClick={setShow(!show)}
+                                />
+                            </div>
+                            <div className="modal-body">
+                                <h1>Hello</h1>
+                            </div>
+                            </div>
+                        </div>
+                        :
+                        null
+                    }
+            </div>
+            <a href="#" className="btn btn-primary" onClick={() => {setShow(!show)}}>View Recipe</a>
         </div>
 
         
-    )
+    );
 }
 
 export default PostCard;
