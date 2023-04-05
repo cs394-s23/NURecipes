@@ -23,7 +23,7 @@ const PostCard = (props) => {
             <div className="card-header">
                 <div className="card-title">{props.title}</div>
                 <div className="profile">
-                    <div>
+                    <div className="pic-border">
                         <img src={props.profile_pic_url} className="profile-pic"/>
                     </div>
                     <div className="card-user">{props.username}</div>
