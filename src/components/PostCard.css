@@ -1,7 +1,5 @@
 .card {
     display: flex;
-    background-color: white;
-    color: black;
     margin-bottom: 50px;
     width: 50vw;
     height: 90vh;
@@ -9,12 +7,26 @@
     /* align-content: flex-start; */
     /* justify-items: flex-start; */
     /* border: 1px solid red; */
+
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+    transform: scale(1.02);
 }
 
 .card-header {
     display: flex;
     flex-direction: column;
     padding: 0px;
+    background-color: white;
     /* align-items: center; */
     /* justify-content: space-between; */
 }
@@ -68,7 +80,6 @@
     
 }
 
-
 .card-image {
     width: 100%;
     /* margin-bottom: 20px; */
@@ -92,7 +103,6 @@
 
     /* border: 1px solid green; */
     /* padding: 3px; */
-
 }
 
 .like-count {
@@ -107,9 +117,7 @@
 
 .like-button {
     align-self: center;
-   
 }
-
 
 .card-title {
     display: flex;
@@ -127,7 +135,6 @@
     width: 800px;
     text-align: left;
     /* border: 1px solid yellow; */
-    
 }
 
 .rating {
