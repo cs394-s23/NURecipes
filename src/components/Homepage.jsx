@@ -12,8 +12,6 @@ const Homepage = ({data}) => {
         <div>
             < Feed data = {data} />
         </div>
-        
-
     )
 }
 
