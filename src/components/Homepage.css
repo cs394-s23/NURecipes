@@ -2,3 +2,10 @@ body {
     background-color: #4E2A84;
 }
 
+
+.feed {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

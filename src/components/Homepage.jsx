@@ -9,8 +9,8 @@ const Homepage = ({data}) => {
         return <h1>Data is loading...</h1>;
     }
     return (
-        <div>
-            < Feed data = {data} />
+        <div className = "feed">
+            < Feed  data = {data} />
         </div>
     )
 }

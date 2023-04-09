@@ -1,3 +1,7 @@
 .navigation {
-    width: 1500px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 100vw;
+    
 }

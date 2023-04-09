@@ -6,7 +6,7 @@ import NavBar from "./components/NavBar.jsx";
 import { useDbData } from "./utilities/firebase";
 
 import { FaHeart } from "react-icons/fa";
-
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import Homepage from "./components/Homepage.jsx";
 
 const App = () => {
@@ -15,7 +15,20 @@ const App = () => {
   return (
     <div>
       <NavBar />
-      <Homepage data={data} />
+      <BrowserRouter>
+        <Routes>
+          <Route path = "/" element = {
+            <div>
+              <Homepage data={data} />
+            </div>}
+            />
+            <Route  path = "/discover" element = {
+             <div>
+               Hello, world!
+             </div>
+            }/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
