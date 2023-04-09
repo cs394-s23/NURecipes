@@ -8,6 +8,7 @@ import { useDbData } from "./utilities/firebase";
 import { FaHeart } from "react-icons/fa";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import Homepage from "./components/Homepage.jsx";
+import Discover from "./components/Discover";
 
 const App = () => {
   const [data, error] = useDbData("/");
@@ -24,7 +25,7 @@ const App = () => {
             />
             <Route  path = "/discover" element = {
              <div>
-               Hello, world!
+              <Discover data={data} />
              </div>
             }/>
         </Routes>
