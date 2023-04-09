@@ -13,7 +13,7 @@ const App = () => {
   const [data, error] = useDbData("/");
 
   return (
-    <div>
+    <div className = "app-container">
       <NavBar />
       <BrowserRouter>
         <Routes>

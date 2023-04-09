@@ -10,7 +10,7 @@ const Homepage = ({data}) => {
     }
     return (
         <div className = "feed">
-            < Feed  data = {data} />
+            < Feed data = {data}  />
         </div>
     )
 }
