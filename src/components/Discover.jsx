@@ -11,7 +11,7 @@ const Discover = ({data}) => {
         return <h1>Data is loading...</h1>;
     }
 
-    const sortedData = data.sort((a,b) => {
+    const sortedData = data.Recipes.sort((a,b) => {
         return a.like_count > b.like_count ? -1 : 1
     })
 

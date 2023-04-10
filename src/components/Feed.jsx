@@ -7,7 +7,7 @@ const Feed = ({data}) => {
     }
     return (
         <div className = "feed-container">
-            {data.map((post, index) => <PostCard props={post} key={index} />)}
+            {data.map((post, index) => <PostCard props={post.Recipes} key={index} />)}
         </div>
         );
     }
