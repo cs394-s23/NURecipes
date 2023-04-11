@@ -2,6 +2,7 @@ import LeaderboardCard from "./LeaderboardCard.jsx"
 import Feed from "./Feed.jsx"
 import "./Homepage.css"
 import React, { useState, useEffect } from "react"
+import ActivityCard from "./ActivityCard.jsx"
 
 const Discover = ({data}) => {
 
@@ -28,6 +29,10 @@ const Discover = ({data}) => {
             </div>
             <div className = 'activity-feed'>
                 {sortedData.map((recipe, index) => <LeaderboardCard props={recipe} key={index} />)}
+            </div>
+
+            <div className = 'activity-feed'>
+                {data.Activities.map((activity, index) => <ActivityCard props={activity} key={index} />)}
             </div>
         </div>
     )

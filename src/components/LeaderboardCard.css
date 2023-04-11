@@ -8,6 +8,8 @@
     /* align-content: flex-start; */
     /* justify-items: flex-start; */
     /* border: 1px solid red; */
+    flex-direction: column;
+    background-color: white;
 
     transform: translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
