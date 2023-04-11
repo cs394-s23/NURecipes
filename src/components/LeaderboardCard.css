@@ -1,0 +1,147 @@
+.card-leaderboard {
+    display: flex;
+    margin-bottom: 50px;
+    width: 20vw;
+    height: 20vh;
+    margin-right: 50px;
+    /* align-items: start; */
+    /* align-content: flex-start; */
+    /* justify-items: flex-start; */
+    /* border: 1px solid red; */
+
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+    transform: scale(1.02);
+}
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    background-color: white;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+}
+
+.btn-primary {
+    align-self:center;
+    margin-top: auto;
+}
+
+.profile {
+    display: flex;
+    /* padding: 5px; */
+    padding-top: 0;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* align-content: center; */
+    vertical-align: middle;
+}
+
+.profile-pic {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+    padding-top: 0;
+    justify-self: center;
+    vertical-align: middle;
+}
+
+.pic-border {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.card-user {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 10px;
+    /* padding: 10px; */
+    
+    /* border: 1px solid blue; */
+    
+}
+
+.card-image {
+    width: 100%;
+    /* margin-bottom: 20px; */
+    max-height: 80%;
+    /* border-radius: 5px; */
+    /* border: 1px solid black; */
+}
+
+.recipe-image {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    /* max-width: 90%;  */
+    object-fit:contain;
+}
+
+.utility-bar {
+    display: flex;
+    justify-content: flex-start;
+    /* margin-bottom: 15px; */
+
+    /* border: 1px solid green; */
+    /* padding: 3px; */
+}
+
+.like-count {
+    font-size: 15px;
+    padding-left: 10px;
+    align-self: center;
+}
+/* svg {
+    width: 20px;
+    height: 20px;
+} */
+
+.like-button {
+    align-self: center;
+}
+
+.card-title {
+    display: flex;
+    flex-direction: start;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+}
+
+.card-rating {
+    display: flex;
+    /* flex-direction: start; */
+    justify-content: flex-start;
+    font-weight: normal;
+    width: 800px;
+    text-align: left;
+    /* border: 1px solid yellow; */
+}
+
+.rating {
+    padding-right: 10px;
+}
+
+.card-caption {
+    text-align: left;
+}
