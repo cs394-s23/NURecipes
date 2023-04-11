@@ -8,3 +8,9 @@ body {
     margin-top: 100px;
 
 }
+
+.activity-feed {
+    display: flex;
+    justify-content: space-between;
+    overflow: scroll;
+}
