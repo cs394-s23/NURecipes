@@ -2,7 +2,7 @@
     display: flex;
     margin-bottom: 50px;
     width: 20vw;
-    height: 30vh;
+    height: 38vh;
     margin-right: 50px;
     padding: 10px;
     /* align-items: start; */
@@ -158,4 +158,10 @@
 
 .card-caption {
     text-align: left;
+}
+
+
+.recipe-img {
+    height: 20vh;
+    padding-bottom: 10px;
 }
