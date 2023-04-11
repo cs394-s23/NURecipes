@@ -24,15 +24,15 @@ const ActivityCard = ({props}) => {
           <div className="card-rating">
             <p className="rating">
               {" "}
-              <strong>number of guests: </strong> {props.guests}
+              <strong>Number of guests: </strong> {props.guests}
             </p>
             <p className="rating">
               {" "}
-              <strong> Place: </strong> ${props.place}{" "}
+              <strong> Place: </strong> {props.place}{" "}
             </p>
           </div>
 
-          <div className="card-caption">{props.time}</div>
+          <div className="card-caption"> <strong> Time: </strong>  {props.time}</div>
         </div>
       </div>
     </div>

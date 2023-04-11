@@ -31,6 +31,9 @@ const Discover = ({data}) => {
                 {sortedData.map((recipe, index) => <LeaderboardCard props={recipe} key={index} />)}
             </div>
 
+            <div className = "leaderboard">
+                <h1 style={{color:"white"}}> This week's activities are: </h1>
+            </div>
             <div className = 'activity-feed'>
                 {data.Activities.map((activity, index) => <ActivityCard props={activity} key={index} />)}
             </div>
