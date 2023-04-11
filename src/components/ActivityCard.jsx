@@ -8,7 +8,7 @@ const ActivityCard = ({props}) => {
   console.log('Test data in2:', props);
 
   return (
-    <div className="feed">
+    <div className="activities">
       <div className="activity-feed">
         <div className="card-leaderboard">
           <div className="card-header">
@@ -22,11 +22,11 @@ const ActivityCard = ({props}) => {
           </div>
 
           <div className="card-rating">
-            <p className="rating">
+            <p className="guests">
               {" "}
               <strong>Number of guests: </strong> {props.guests}
             </p>
-            <p className="rating">
+            <p className="place">
               {" "}
               <strong> Place: </strong> {props.place}{" "}
             </p>

@@ -2,14 +2,16 @@
     display: flex;
     margin-bottom: 50px;
     width: 20vw;
-    height: 20vh;
+    height: 30vh;
     margin-right: 50px;
+    padding: 10px;
     /* align-items: start; */
     /* align-content: flex-start; */
     /* justify-items: flex-start; */
     /* border: 1px solid red; */
     flex-direction: column;
     background-color: white;
+    border-radius: 5px;
 
     transform: translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -19,10 +21,18 @@
     transition-property: transform;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
+.card-leaderboard:hover,
+.card-leaderboard:focus,
+.card-leaderboard:active {
     transform: scale(1.02);
+}
+
+.activity-feed {
+    padding: 10px;
+}
+
+.leaderboard {
+    margin-bottom: 20px;
 }
 
 .card-header {
@@ -135,8 +145,8 @@
     /* flex-direction: start; */
     justify-content: flex-start;
     font-weight: normal;
-    width: 800px;
-    /* width: 100%; */
+    /* width: 800px; */
+    width: 100%;
     text-align: left;
     /* border: 1px solid yellow; */
     /* overflow-wrap: break-word; */
