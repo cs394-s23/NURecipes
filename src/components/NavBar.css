@@ -10,4 +10,5 @@
 
 .navbar {
     height: 100px;
+    overflow:scroll;
 }
