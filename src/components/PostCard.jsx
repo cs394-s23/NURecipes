@@ -6,7 +6,8 @@ import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import Modal from "./PopUpModal.jsx";
 
-import { pushDb } from "../utilities/firebase";
+import {pushDb, updateLikes } from "../utilities/firebase";
+
 
 // props: POST CLASS: title, caption, image, recipe, author...
 // also, probably give user who posted?
@@ -47,6 +48,7 @@ const PostCard = (props) => {
               style={{ color: "red" }}
               onClick={() => {
                 setLiked(false);
+                updateLikes(props.key, false)
               }}
             />
           ) : (
@@ -55,6 +57,8 @@ const PostCard = (props) => {
               size="lg"
               onClick={() => {
                 setLiked(true);
+                updateLikes(props.key, true)
+
               }}
             />
           )}
