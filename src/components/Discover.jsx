@@ -14,13 +14,19 @@ const Discover = ({data}) => {
 
     console.log("data recipes ", data.Recipes)
 
-    const sortedData = data.Recipes.sort((a,b) => {
+
+    var recipeData = Object.values(data.Recipes);
+    var activitiesData = Object.values(data.Activities);
+
+    const sortedData = recipeData.sort((a,b) => {
         return a.like_count > b.like_count ? -1 : 1
     })
 
-    console.log("post-sort data: ", data);
-    console.log("sorted data: ", sortedData);
-    console.log("all activities: ", data.Activities)
+
+    console.log(sortedData)
+    // console.log("post-sort data: ", data);
+    // console.log("sorted data: ", sortedData);
+    // console.log("all activities: ", data.Activities)
 
     return (
         <div className = "feed">
@@ -35,7 +41,7 @@ const Discover = ({data}) => {
                 <h1 style={{color:"white"}}> This week's activities are: </h1>
             </div>
             <div className = 'activity-feed'>
-                {data.Activities.map((activity, index) => <ActivityCard props={activity} key={index} />)}
+                {activitiesData.map((activity, index) => <ActivityCard props={activity} key={index} />)}
             </div>
         </div>
     )

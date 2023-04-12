@@ -16,21 +16,21 @@ const PopUpModal = (props) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{props.title}</Modal.Title>
+          <Modal.Title>{props?.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <div>
         {/* Render unordered list for ingredients */}
           <h2>Ingredients:</h2>
           <ul>
-            {props.ingredients.split(',').map((ingredient, index) => (
+            {props.ingredients?.split(',').map((ingredient, index) => (
               <li key={index}>{ingredient.trim()}</li>
             ))}
           </ul>
           {/* Render ordered list for steps */}
           <h2>Steps:</h2>
           <ol>
-            {props.steps.map((step, index) => (
+            {props.steps?.map((step, index) => (
               <li key={index}>{step}</li>
             ))}
           </ol>

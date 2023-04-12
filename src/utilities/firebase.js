@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
-import { getDatabase, onValue, ref, update, set, push } from "firebase/database";
+import { getDatabase, onValue, ref, update, runTransaction, push, set } from "firebase/database";
 import { useCallback, useEffect, useState } from "react";
 
 import { v4 as uuid } from 'uuid';
@@ -74,12 +74,30 @@ const makeResult = (error) => {
 
 export const pushDb = (data, path) => {
   const newPostKey = uuid().slice(0,8)
-  const updates = {};
+  // const updates = {};
   data.key = newPostKey;
-  var lastIndex = 1;
-  updates['/' + path + lastIndex] = data;
-  return update(ref(db), updates);
+  // var lastIndex = 1;
+  // updates['/' + path + lastIndex] = data;
+  // return update(ref(db), updates);
+
+  var key = set(ref(db, path + newPostKey), data);
 };
+
+
+export const updateLikes = (postId, like) => {
+  const postRef = ref(db, '/Recipes/' + postId);
+  runTransaction(postRef, (post) => {
+    if (post) {
+      if(like){
+        post.like_count++;
+      }
+      else{
+        post.like_count--;
+      }
+    }
+    return post;
+  });
+}
 
 export const useDbUpdate = (path) => {
   const [result, setResult] = useState();
