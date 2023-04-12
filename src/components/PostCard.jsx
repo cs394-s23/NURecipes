@@ -67,10 +67,13 @@ const PostCard = (props) => {
       </div>
 
       <div className="card-rating">
-        <p className="rating">
-          {" "}
-          <strong>Cook time: </strong> {props.cook_time}
-        </p>
+        {props.cook_time != "" ? (
+            <p className="rating">
+            {" "}
+            <strong>Cook time: </strong> {props.cook_time}
+          </p>
+        ) : null}
+        
         <p className="rating">
           {" "}
           <strong> Cost: </strong> ${props.cost}{" "}
