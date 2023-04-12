@@ -35,6 +35,17 @@ const LeaderboardCard = (props) => {
                     </div>
                     <div className="card-user">{props.username}</div>
 
+                    <div className="like-icon">
+                    {liked ?
+                        <FontAwesomeIcon icon={faHeartSolid} size="lg" style={{color: "red"}} onClick={() => {setLiked(false)}} />
+                        :
+                        <FontAwesomeIcon icon={faHeart} size="lg" onClick={() => {setLiked(true)}} />
+                        
+                    }
+                </div>
+
+                    <div className = "num-likes">{props.like_count}</div>
+
                 </div>
             </div>
             
@@ -53,18 +64,22 @@ const LeaderboardCard = (props) => {
 
             </div> */}
                     
-            <div className="card-rating">
+            {/* <div className="card-rating">
                 <p className = "rating"> <strong>Cook time: </strong> {props.cook_time}</p>
                 <p className = "rating"> <strong> Cost: </strong> ${props.cost} </p>
-            </div>
-
-            <div className="card-caption">
-                {props.caption}
-            </div>
+            </div> */}
             
+            <div className="recipe-img">
+                    <img src={props.image_url} alt="" className="recipe-image"/>
+            </div>
 
-            {/* should this view recipe button take us to another page or just expand the card? */}
-            {/* <div className="modal-button">
+            {/* <div className="card-caption">
+                {props.caption}
+            </div> */}
+
+
+        
+            <div className="modal-button">
                     {show ?
                             <div className="modal-dialog" role="document">
                             <div className="modal-content">
@@ -81,9 +96,10 @@ const LeaderboardCard = (props) => {
                         :
                         null
                     }
-            </div> */}
+            </div>
             {/* <a href="#" className="btn btn-primary" onClick={() => {setShow(!show)}}>View Recipe</a> */}
-            {/* <Modal title = {props.title} ingredients = {props.recipe.ingredients} steps = {props.recipe.steps}/> */}
+            <Modal title = {props.title} ingredients = {props.recipe.ingredients} steps = {props.recipe.steps}/>
+
         </div>
 
         

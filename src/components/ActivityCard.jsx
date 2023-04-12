@@ -21,19 +21,13 @@ const ActivityCard = ({props}) => {
             </div>
           </div>
 
-          <div className="card-rating">
-            <p className="guests">
-              {" "}
-              <strong>Number of guests: </strong> {props.guests}
-            </p>
-            <p className="place">
-              {" "}
-              <strong> Place: </strong> {props.place}{" "}
-            </p>
+          <div className="card-info">
+            <div className="place"> <strong> Location: </strong>  {props.place}</div>
+            <div className="card-caption"> <strong> Time: </strong>  {props.time}</div>
+            <div className="guests"> <strong> Guests: </strong>  {props.guests}</div>
           </div>
 
           <div className="card-caption"> <strong> Time: </strong>  {props.time} <br/>  <strong> Contact: </strong> {props.contact}</div>
-
         </div>
       </div>
     </div>
