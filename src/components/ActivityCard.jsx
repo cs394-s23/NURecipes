@@ -27,6 +27,7 @@ const ActivityCard = ({props}) => {
             <div className="guests"> <strong> Guests: </strong>  {props.guests}</div>
           </div>
 
+          <div className="card-caption"> <strong> Time: </strong>  {props.time} <br/>  <strong> Contact: </strong> {props.contact}</div>
         </div>
       </div>
     </div>
