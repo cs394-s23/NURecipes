@@ -35,6 +35,17 @@ const LeaderboardCard = (props) => {
                     </div>
                     <div className="card-user">{props.username}</div>
 
+                    <div className="like-icon">
+                    {liked ?
+                        <FontAwesomeIcon icon={faHeartSolid} size="lg" style={{color: "red"}} onClick={() => {setLiked(false)}} />
+                        :
+                        <FontAwesomeIcon icon={faHeart} size="lg" onClick={() => {setLiked(true)}} />
+                        
+                    }
+                </div>
+
+                    <div className = "num-likes">{props.like_count}</div>
+
                 </div>
             </div>
             
