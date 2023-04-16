@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./Create.css";
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
@@ -183,7 +184,6 @@ const Create = ({ data }) => {
         </div>
         {/* <Form.Control type="file" name="image_url"/> */}
       </Form.Group>
-
       <InputGroup className="mb-3">
         <InputGroup.Text>Cost and Time</InputGroup.Text>
         <Form.Control aria-label="Cost" placeholder="Cost" name="cost" />
