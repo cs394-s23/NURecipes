@@ -89,7 +89,7 @@ const PostCard = (props) => {
                     }
             </div>
             {/* <a href="#" className="btn btn-primary" onClick={() => {setShow(!show)}}>View Recipe</a> */}
-            <Modal title = {props.title} ingredients = {props.recipe.ingredients} steps = {props.recipe.steps}/>
+            {/* <Modal title = {props.title} ingredients = {props.recipe.ingredients} steps = {props.recipe.steps}/> */}
         </div>
 
         
