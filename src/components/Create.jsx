@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { pushDb } from "../utilities/firebase"
 import InputGroup from "react-bootstrap/InputGroup"
+import ToggleButton from 'react-bootstrap/ToggleButton';
+
 
 const Create = ({data}) => {
 
@@ -55,6 +57,7 @@ const Create = ({data}) => {
                     "https://imageio.forbes.com/specials-images/imageserve/602c09c9135a060af5e1a8f4/Face-with-Spiral-Eyes---a-new-Apple-emoji-/960x0.png?format=png&width=960",
             recipe: formDataObj.recipe,
             title: formDataObj.title,
+            tags: formDataObj.tags
            
         }
 
@@ -85,6 +88,19 @@ const Create = ({data}) => {
           <Form.Label>Details</Form.Label>
           <Form.Control as="textarea" placeholder="Caption" rows = {2} name="caption"/>
         </Form.Group>
+
+        <Form.Group controlId="mb-3" className="mb-3">
+          
+          <Form.Label>Tags</Form.Label>
+          <div className="tags-section">
+            <ToggleButton className="tag-button" variant="outline-success"> Vegetarian </ToggleButton>
+            <Button className="tag-button" variant="outline-success"> Vegan </Button>
+            <Button className="tag-button" variant="outline-success"> Gluten-Free </Button>
+            <Button className="tag-button" variant="outline-success"> Dairy-Free </Button>
+          </div>
+          {/* <Form.Control type="file" name="image_url"/> */}
+        </Form.Group>
+
         <InputGroup className="mb-3">
           <InputGroup.Text>Cost and Time</InputGroup.Text>
           <Form.Control aria-label="Cost" placeholder="Cost" name ="cost"/>
