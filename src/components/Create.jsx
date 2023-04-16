@@ -145,11 +145,12 @@ const Create = ({data}) => {
         </InputGroup>
 
 
-        <Form.Group controlId="formFile" className="mb-3">
+        {/* <Form.Group controlId="formFile" className="mb-3">
           <Form.Label>Picture</Form.Label>
           <Form.Control type="file" onChange={handleImageUpload}/>
           {imageUrl && <img src={imageUrl} alt="Uploaded" />}
-        </Form.Group>
+        </Form.Group> */}
+
         <Button variant="primary" type="submit">
           Submit
         </Button>
