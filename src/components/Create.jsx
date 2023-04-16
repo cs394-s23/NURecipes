@@ -1,3 +1,5 @@
+// import { initializeApp } from 'firebase/app';
+// import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 
 import "./Create.css"
 import React, { useState, useEffect } from "react"
@@ -7,6 +9,7 @@ import { pushDb } from "../utilities/firebase"
 import InputGroup from "react-bootstrap/InputGroup"
 import ToggleButton from 'react-bootstrap/ToggleButton';
 
+import { FormControl } from 'react-bootstrap';
 
 const Create = ({data}) => {
 
@@ -15,8 +18,8 @@ const Create = ({data}) => {
     const [glutenFree, setGlutenFree] = useState(false);
     const [dairyFree, setDairyFree] = useState(false);
 
+    // const [imageUrl, setImageUrl] = useState('');
 
-   
     const handleVeggie = (e) => {
         setVeggie(!veggie);
     }
@@ -33,7 +36,6 @@ const Create = ({data}) => {
         setDairyFree(!dairyFree);
     } 
 
-
     // const [value, setValue] = useState(),
     //     onInput = ({target:{value}}) => setValue(value),
     //     onFormSubmit = e => {
@@ -44,6 +46,15 @@ const Create = ({data}) => {
 
     //         }
     // }
+
+    // const handleImageUpload = async (event) => {
+    //   const file = event.target.files[0];
+    //   const storageRef = firebase.storage().ref();
+    //   const fileRef = storageRef.child(file.name);
+    //   await fileRef.put(file);
+    //   const downloadURL = await fileRef.getDownloadURL();
+    //   setImageURL(downloadURL);
+    // };
 
     function wait(ms){
         var start = new Date().getTime();
@@ -136,8 +147,9 @@ const Create = ({data}) => {
 
         <Form.Group controlId="formFile" className="mb-3">
           <Form.Label>Picture</Form.Label>
-          <Form.Control type="file" name="image_url"/>
-      </Form.Group>
+          <Form.Control type="file" onChange={handleImageUpload}/>
+          {imageUrl && <img src={imageUrl} alt="Uploaded" />}
+        </Form.Group>
         <Button variant="primary" type="submit">
           Submit
         </Button>

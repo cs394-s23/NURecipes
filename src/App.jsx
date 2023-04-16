@@ -9,7 +9,8 @@ import { FaHeart } from "react-icons/fa";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import Homepage from "./components/Homepage.jsx";
 import Discover from "./components/Discover";
-import Create from "./components/Create.jsx"
+import Create from "./components/Create.jsx";
+import Testing from "./components/Testing.jsx";
 
 const App = () => {
   const [data, error] = useDbData("/");
@@ -17,6 +18,7 @@ const App = () => {
   return (
     <div className = "app-container">
       <NavBar />
+      <Testing />
       <BrowserRouter>
         <Routes>
           <Route path = "/" element = {
