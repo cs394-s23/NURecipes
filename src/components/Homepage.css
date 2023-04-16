@@ -15,3 +15,7 @@ body {
     justify-content: space-between;
     overflow: scroll;
 }
+
+.feed {
+    margin-top: 15px;
+}
