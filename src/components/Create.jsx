@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import "./Create.css";
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
