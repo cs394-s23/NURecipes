@@ -30,9 +30,9 @@ const PopUpModal = (props) => {
           {/* Render ordered list for steps */}
           <h2>Steps:</h2>
           <ol>
-            {props.steps?.map((step, index) => (
-              <li key={index}>{step}</li>
-            ))}
+            {props.steps?.split(',').map(((step, index) => (
+              <li key={index}>{step.trim()}</li>
+            )))}
           </ol>
       </div>
         </Modal.Body>

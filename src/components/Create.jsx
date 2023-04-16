@@ -78,9 +78,12 @@ const Create = ({data}) => {
             like_count: 0,
             profile_pic_url:
                     "https://imageio.forbes.com/specials-images/imageserve/602c09c9135a060af5e1a8f4/Face-with-Spiral-Eyes---a-new-Apple-emoji-/960x0.png?format=png&width=960",
-            recipe: formDataObj.recipe,
             title: formDataObj.title,
-            tags: formDataObj.tags
+            tags: [veggie, vegan, glutenFree, dairyFree],
+            recipe: {
+              ingredients:formDataObj.ingredients,
+              steps:formDataObj.steps},
+            
            
         }
 
@@ -101,11 +104,11 @@ const Create = ({data}) => {
   
         <Form.Group className="mb-3" controlId="formIngredients">
           <Form.Label>Ingredients</Form.Label>
-          <Form.Control as="textarea" placeholder="Ingredients (Separate by commas)" rows = {2} name ="recipe"/>
+          <Form.Control as="textarea" placeholder="Ingredients (Separate by commas)" rows = {2} name ="ingredients"/>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formSteps">
           <Form.Label>Steps</Form.Label>
-          <Form.Control as="textarea" placeholder="Steps (Separate by commas)" rows = {2} />
+          <Form.Control as="textarea" placeholder="Steps (Separate by commas)" rows = {2} name = "steps" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formCaption">
           <Form.Label>Details</Form.Label>
