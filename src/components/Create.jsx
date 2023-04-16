@@ -10,6 +10,29 @@ import ToggleButton from 'react-bootstrap/ToggleButton';
 
 const Create = ({data}) => {
 
+    const [veggie, setVeggie] = useState(false);
+    const [vegan, setVegan] = useState(false);
+    const [glutenFree, setGlutenFree] = useState(false);
+    const [dairyFree, setDairyFree] = useState(false);
+
+
+   
+    const handleVeggie = (e) => {
+        setVeggie(!veggie);
+    }
+
+    const handleVegan = (e) => {
+        setVegan(!vegan);
+    }
+
+    const handleGlutenFree = (e) => { 
+        setGlutenFree(!glutenFree);
+    }
+
+    const handleDairyFree = (e) => {
+        setDairyFree(!dairyFree);
+    } 
+
 
     // const [value, setValue] = useState(),
     //     onInput = ({target:{value}}) => setValue(value),
@@ -93,10 +116,10 @@ const Create = ({data}) => {
           
           <Form.Label>Tags</Form.Label>
           <div className="tags-section">
-            <ToggleButton className="tag-button" variant="outline-success"> Vegetarian </ToggleButton>
-            <Button className="tag-button" variant="outline-success"> Vegan </Button>
-            <Button className="tag-button" variant="outline-success"> Gluten-Free </Button>
-            <Button className="tag-button" variant="outline-success"> Dairy-Free </Button>
+            <ToggleButton className="tag-button" variant="outline-success" type="checkbox" checked={veggie} onClick={() => handleVeggie()}> Vegetarian </ToggleButton>
+            <ToggleButton className="tag-button" variant="outline-success" type="checkbox" checked={vegan} onClick={() => handleVegan()}> Vegan </ToggleButton>
+            <ToggleButton className="tag-button" variant="outline-success" type="checkbox" checked={glutenFree} onClick={() => handleGlutenFree()} > Gluten-Free </ToggleButton>
+            <ToggleButton className="tag-button" variant="outline-success" type="checkbox" checked={dairyFree} onClick={() => handleDairyFree()}> Dairy-Free </ToggleButton>
           </div>
           {/* <Form.Control type="file" name="image_url"/> */}
         </Form.Group>
