@@ -25,12 +25,12 @@ const App = () => {
               <Homepage data={data} />
             </div>}
             />
-            <Route  path = "/discover" element = {
+            <Route  path = "/discover/" element = {
              <div>
               <Discover data={data} />
              </div>
             }/>
-            <Route path = "/create" element = {
+            <Route path = "/create/" element = {
               <div>
                 <Create/>
               </div>
