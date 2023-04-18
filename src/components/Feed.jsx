@@ -14,6 +14,9 @@ const Feed = ({data, desiredTags}) => {
 
     feedData = feedData.filter(checkTag)
 
+    //if feedData is empty, display something
+
+
     function checkTag(recipe){
         // Access the tags of the recipe 
         // Check that it matches input, return true or false
@@ -28,10 +31,14 @@ const Feed = ({data, desiredTags}) => {
     if (!data) {
         return <h1>Data is loading...</h1>;
     }
+    else if(feedData.length == 0) {
+        return <h1>No posts match this search criteria</h1>
+    }
     return (
-        <div className = "feed-container">
+            <div className = "feed-container">
             {feedData.map((post, index) => <PostCard props={post} key={index} />)}
-        </div>
+            </div>
+
         );
     }
         

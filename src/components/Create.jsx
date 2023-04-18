@@ -7,6 +7,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import storage from "../utilities/firebase.js";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { useNavigate } from "react-router-dom";
 
 const Create = ({ data }) => {
   const [veggie, setVeggie] = useState(false);
@@ -45,6 +46,7 @@ const Create = ({ data }) => {
     }
   }
 
+  let navigate = useNavigate();
   const onFormSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target),
@@ -93,12 +95,13 @@ const Create = ({ data }) => {
           };
 
           pushDb(test, "Recipes/");
+
+          navigate(`/#`)
         });
       }
     );
 
-    // console.log(test.image_url)
-    // wait(20000)
+ 
   };
 
   //need title, picture, ingredients, steps, cost, time
