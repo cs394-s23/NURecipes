@@ -81,7 +81,7 @@ const Create = ({ data }) => {
             caption: formDataObj.caption,
             cook_time: formDataObj.cook_time,
             cost: formDataObj.cost,
-            date_posted: "04-011-23",
+            date_posted: new Date().getTime(),
             image_url: url,
             like_count: 0,
             profile_pic_url:

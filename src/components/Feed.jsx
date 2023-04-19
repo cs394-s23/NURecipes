@@ -12,6 +12,12 @@ const Feed = ({data, desiredTags}) => {
     // Need to know what the desired tags are (from selection)
     // Check that they match 
 
+
+    const sortedData = feedData.sort((a,b) => {
+        return a.date_posted > b.date_posted ? -1 : 1
+    })
+
+    feedData = sortedData
     feedData = feedData.filter(checkTag)
 
     //if feedData is empty, display something
