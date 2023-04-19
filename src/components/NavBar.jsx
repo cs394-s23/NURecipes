@@ -11,7 +11,7 @@ const NavBar = () => {
     return (
         <Navbar bg="light" expand="lg" className="navigation">
         <Container>
-          <Navbar.Brand href="/#">NURecipe</Navbar.Brand>
+          <Navbar.Brand href="/#">NURecipes</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
