@@ -25,7 +25,7 @@ const LeaderboardCard = (props) => {
     const handleShow = () => setShow(true);
 
     return (
-        <div className="card-leaderboard">
+        <div className="card-leaderboard" data-cy="lbcard">
 
             <div className="card-header">
                 <div className="card-title">{props.title}</div>

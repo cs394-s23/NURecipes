@@ -25,7 +25,7 @@ const PostCard = (props) => {
     const handleShow = () => setShow(true);
 
     return (
-        <div className="card">
+        <div className="card" data-cy="postcard">
 
             <div className="card-header">
                 <div className="card-title">{props.title}</div>
