@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage"
 // import { getAnalytics } from "firebase/analytics";
-import { getDatabase, onValue, ref, update, runTransaction, push, set } from "firebase/database";
+import { getDatabase, onValue, ref, update, runTransaction, push, set, connectDatabaseEmulator } from "firebase/database";
 import { useCallback, useEffect, useState } from "react";
 
 import { v4 as uuid } from 'uuid';
@@ -37,6 +37,18 @@ export default storage;
 
 export const db = getDatabase(app);
 // const analytics = getAnalytics(app);
+
+if (!windows.EMULATION && import.meta.env.NODE_ENV !== 'production') {
+  connectAuthEmulator(auth, "http://127.0.0.1:9099");
+  connectDatabaseEmulator(database, "127.0.0.1", 9000);
+
+  // signInWithCredential(auth, GoogleAuthProvider.credential(
+  //   '{"sub": "qEvli4msW0eDz5mSVO6j3W7i8w1k", "email": "tester@gmail.com", "displayName":"Test User", "email_verified": true}'
+  // ));
+  
+  // set flag to avoid connecting twice, e.g., because of an editor hot-reload
+  windows.EMULATION = true;
+}
 
 export const useDbData = (path) => {
   const [data, setData] = useState();
@@ -90,6 +102,7 @@ export const pushDb = (data, path) => {
 
 export const updateLikes = (postId, like) => {
   const postRef = ref(db, '/Recipes/' + postId);
+  console.log('here', postRef)
   runTransaction(postRef, (post) => {
     if (post) {
       if(like){

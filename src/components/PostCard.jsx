@@ -5,7 +5,7 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import Modal from "./PopUpModal.jsx"
-
+import {updateLikes} from '../utilities/firebase'
 
 
 // props: POST CLASS: title, caption, image, recipe, author...
@@ -47,9 +47,13 @@ const PostCard = (props) => {
             <div className="utility-bar">
                 <div className="like-button">
                     {liked ?
-                        <FontAwesomeIcon icon={faHeartSolid} size="lg" style={{color: "red"}} onClick={() => {setLiked(false)}} />
+                        <FontAwesomeIcon icon={faHeartSolid} size="lg" style={{color: "red"}} onClick={() => {
+                            setLiked(false);
+                            updateLikes(props.key, false)}} />
                         :
-                        <FontAwesomeIcon icon={faHeart} size="lg" onClick={() => {setLiked(true)}} />
+                        <FontAwesomeIcon icon={faHeart} size="lg" onClick={() => {
+                            setLiked(true);
+                            updateLikes(props.key, true)}} />
                         
                     }
                 </div>
