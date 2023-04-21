@@ -38,17 +38,17 @@ export default storage;
 export const db = getDatabase(app);
 // const analytics = getAnalytics(app);
 
-if (!windows.EMULATION && import.meta.env.NODE_ENV !== 'production') {
-  connectAuthEmulator(auth, "http://127.0.0.1:9099");
-  connectDatabaseEmulator(database, "127.0.0.1", 9000);
+// if (!windows.EMULATION && import.meta.env.NODE_ENV !== 'production') {
+//   connectAuthEmulator(auth, "http://127.0.0.1:9099");
+//   connectDatabaseEmulator(database, "127.0.0.1", 9000);
 
-  // signInWithCredential(auth, GoogleAuthProvider.credential(
-  //   '{"sub": "qEvli4msW0eDz5mSVO6j3W7i8w1k", "email": "tester@gmail.com", "displayName":"Test User", "email_verified": true}'
-  // ));
+//   // signInWithCredential(auth, GoogleAuthProvider.credential(
+//   //   '{"sub": "qEvli4msW0eDz5mSVO6j3W7i8w1k", "email": "tester@gmail.com", "displayName":"Test User", "email_verified": true}'
+//   // ));
   
-  // set flag to avoid connecting twice, e.g., because of an editor hot-reload
-  windows.EMULATION = true;
-}
+//   // set flag to avoid connecting twice, e.g., because of an editor hot-reload
+//   windows.EMULATION = true;
+// }
 
 export const useDbData = (path) => {
   const [data, setData] = useState();
