@@ -144,5 +144,10 @@ export const useUserState = () => useAuthState(getAuth());
 export const useAuthState = () => {
   const [user, setUser] = useState();
   useEffect(() => onAuthStateChanged(getAuth(), setUser));
+  var authData = getAuth();
+
+  if (authData.currentUser) {
+    console.log("Authenticated user with uid:", authData.currentUser);
+  }
   return [user];
 };
