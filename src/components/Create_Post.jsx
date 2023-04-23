@@ -52,11 +52,19 @@ const Create_Post = ({ data }) => {
     const formData = new FormData(e.target),
       formDataObj = Object.fromEntries(formData.entries());
     console.log(e.target);
-    // Object.defineProperties(formDataObj, 'foo', {
-    //     value: 1
-    // })
-    // formDataObj['username'] = "AlexTang"
-    // formDataObj.foo = 1
+
+    if (
+      !formDataObj.caption ||
+      !formDataObj.cook_time ||
+      !formDataObj.cost ||
+      !formDataObj.title ||
+      !formDataObj.ingredients ||
+      !formDataObj.steps ||
+      !file
+    ) {
+      alert("Please fill out all parts of the form");
+      return;
+    }
 
     const storageRef = ref(storage, `/files/${file.name}`);
     console.log(storageRef);
@@ -112,7 +120,9 @@ const Create_Post = ({ data }) => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formIngredients">
-          <Form.Label>Ingredients (Separate by <strong>commas</strong>)</Form.Label>
+          <Form.Label>
+            Ingredients (Separate by <strong>commas</strong>)
+          </Form.Label>
           <Form.Control
             as="textarea"
             placeholder="ex: dough, cheese, marinara sauce"
@@ -121,7 +131,9 @@ const Create_Post = ({ data }) => {
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formSteps">
-          <Form.Label>Steps (Separate by <strong>commas</strong>)</Form.Label>
+          <Form.Label>
+            Steps (Separate by <strong>commas</strong>)
+          </Form.Label>
           <Form.Control
             as="textarea"
             placeholder="ex: put sauce on dough,  place cheese over, bake the pizza"

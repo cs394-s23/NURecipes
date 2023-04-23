@@ -23,11 +23,17 @@ const Create_Activity = ({ data }) => {
     const formData = new FormData(e.target),
       formDataObj = Object.fromEntries(formData.entries());
     console.log(e.target);
-    // Object.defineProperties(formDataObj, 'foo', {
-    //     value: 1
-    // })
-    // formDataObj['username'] = "AlexTang"
-    // formDataObj.foo = 1
+
+    if (
+      !formDataObj.seats ||
+      !formDataObj.location ||
+      !formDataObj.date ||
+      !formDataObj.title ||
+      !formDataObj.contact
+    ) {
+      alert("Please fill out all parts of the form");
+      return;
+    }
 
     var test = {
       host: "AlexTang2",
