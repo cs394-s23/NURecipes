@@ -1,22 +1,19 @@
 body {
-    padding-top: 10px;
-    background-color: #4E2A84;
-
+  padding-top: 10px;
+  background-color: #4e2a84;
 }
 
-
 .bigFeed {
-    /* margin-left: 25%; */
-    margin-top: 100px;
-
+  /* margin-left: 25%; */
+  margin-top: 100px;
 }
 
 .activity-feed {
-    display: flex;
-    justify-content: space-between;
-    overflow: scroll;
-    max-width: 100vw;
-    /* border: magenta; */
+  display: flex;
+  /* justify-content: space-between; */
+  overflow: scroll;
+  max-width: 100vw;
+  /* border: magenta; */
 }
 
 .feed {
@@ -31,3 +28,4 @@ body {
     border-radius: 10px;
     padding: 7px;
 }
+

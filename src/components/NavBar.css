@@ -9,8 +9,17 @@
 
 
 }
-
-.navbar {
-    height: 100px;
-    overflow:scroll;
+@media (min-width: 1000) {
+    .navbar {
+        height: 100px;
+        /* overflow:scroll; */
+    }
 }
+
+@media (max-width: 999px) {
+    .navbar {
+        height: 100px;
+        overflow:scroll;
+    }
+}
+

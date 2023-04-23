@@ -9,7 +9,8 @@ import { FaHeart } from "react-icons/fa";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import Homepage from "./components/Homepage.jsx";
 import Discover from "./components/Discover";
-import Create from "./components/Create.jsx";
+import Create_Post from "./components/Create_Post.jsx";
+import Create_Activity from "./components/Create_Activity";
 
 
 const App = () => {
@@ -30,11 +31,18 @@ const App = () => {
               <Discover data={data} />
              </div>
             }/>
-            <Route path = "/create/" element = {
+            <Route path = "/create_post/" element = {
               <div>
-                <Create/>
+                <Create_Post/>
               </div>
             }/>
+            <Route path = "/create_activity/" element = {
+              <div>
+                <Create_Activity/>
+              </div>
+            }/>
+
+
         </Routes>
       </BrowserRouter>
     </div>
