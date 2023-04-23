@@ -45,10 +45,10 @@ const Homepage = ({data}) => {
     return (
         <div className="bigFeed"> 
             <div className="tagButtons">
-            <ToggleButton className="tag-button" variant="outline-success" type="checkbox" checked={veggie_} onClick={() => handleVeggie_()}> Vegetarian </ToggleButton>
-            <ToggleButton className="tag-button" variant="outline-success" type="checkbox" checked={vegan_} onClick={() => handleVegan_()}> Vegan </ToggleButton>
-            <ToggleButton className="tag-button" variant="outline-success" type="checkbox" checked={glutenFree_} onClick={() => handleGlutenFree_()} > Gluten-Free </ToggleButton>
-            <ToggleButton className="tag-button" variant="outline-success" type="checkbox" checked={dairyFree_} onClick={() => handleDairyFree_()}> Dairy-Free </ToggleButton>
+                <ToggleButton className="tag-button" variant="outline-light" type="checkbox" checked={veggie_} onClick={() => handleVeggie_()}> Vegetarian </ToggleButton>
+                <ToggleButton className="tag-button" variant="outline-light" type="checkbox" checked={vegan_} onClick={() => handleVegan_()}> Vegan </ToggleButton>
+                <ToggleButton className="tag-button" variant="outline-light" type="checkbox" checked={glutenFree_} onClick={() => handleGlutenFree_()} > Gluten-Free </ToggleButton>
+                <ToggleButton className="tag-button" variant="outline-light" type="checkbox" checked={dairyFree_} onClick={() => handleDairyFree_()}> Dairy-Free </ToggleButton>
             </div>
             <div className = "feed">
                 < Feed data = {data.Recipes} desiredTags={[veggie_, vegan_, glutenFree_, dairyFree_]}  />

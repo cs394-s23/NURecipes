@@ -27,6 +27,7 @@ const SignOutButton = () => (
 );
 
 const NavBar = () => {
+
   const [user] = useUserState();
   return (
     <Navbar bg="light" expand="lg" className="navigation">
@@ -58,5 +59,6 @@ const NavBar = () => {
     </Navbar>
   );
 };
+
 
 export default NavBar;

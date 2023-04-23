@@ -91,9 +91,11 @@ const PostCard = (props) => {
                         :
                         null
                     }
+                <div className="view-details-button">
+                    <Modal title = {props.title} ingredients = {props.recipe.ingredients} steps = {props.recipe.steps}/>
+                </div>
             </div>
-            {/* <a href="#" className="btn btn-primary" onClick={() => {setShow(!show)}}>View Recipe</a> */}
-            <Modal title = {props.title} ingredients = {props.recipe.ingredients} steps = {props.recipe.steps}/>
+            
         </div>
 
         
