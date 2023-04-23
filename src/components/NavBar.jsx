@@ -11,6 +11,9 @@ const NavBar = () => {
     return (
         <Navbar bg="light" expand="lg" className="navigation">
         <Container>
+          <a className="navbar-logo" href="#">
+            <img src="src/assets/logo.png" alt="..." height="64"/>
+          </a>
           <Navbar.Brand href="/#">NURecipes</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
