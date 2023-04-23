@@ -9,6 +9,9 @@ import storage from "../utilities/firebase.js";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 
+import { useUserState } from "../utilities/firebase.js";
+
+
 const Create_Activity = ({ data }) => {
   const [veggie, setVeggie] = useState(false);
   const [vegan, setVegan] = useState(false);
@@ -45,40 +48,48 @@ const Create_Activity = ({ data }) => {
 
     // navigate(`/discover/`);
   };
+  
+  
+  const [user] = useUserState();
 
   //need title, picture, ingredients, steps, cost, time
-  return (
-    <div>
-      <Form className="create-form" onSubmit={onFormSubmit}>
-        <Form.Group className="mb-3" controlId="formTitle">
-          <Form.Label>Title</Form.Label>
-          <Form.Control placeholder="ex: Alex's Pizza Night" name="title" />
-        </Form.Group>
+  if (user) {
+    return (
+      <div>
+        <Form className="create-form" onSubmit={onFormSubmit}>
+          <Form.Group className="mb-3" controlId="formTitle">
+            <Form.Label>Title</Form.Label>
+            <Form.Control placeholder="ex: Alex's Pizza Night" name="title" />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formLocation">
-          <Form.Label>Location and Details</Form.Label>
-          <Form.Control placeholder="ex: 828 Noyes St" name="location" />
-        </Form.Group>
-        <InputGroup className="mb-3">
-          <InputGroup.Text>Seats and Date</InputGroup.Text>
-          <Form.Control
-            aria-label="Date"
-            placeholder="Date (ex. Jan 1)"
-            name="date"
-          />
-          <Form.Control aria-label="Seats" placeholder="Seats" name="seats" />
-        </InputGroup>
-        <Form.Group className="mb-3" controlId="formContact">
-          <Form.Label>Contact</Form.Label>
-          <Form.Control placeholder="ex. (123)-456-7890" name="contact" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-        {/* <p>{percent} % done</p> */}
-      </Form>
-    </div>
-  );
+          <Form.Group className="mb-3" controlId="formLocation">
+            <Form.Label>Location and Details</Form.Label>
+            <Form.Control placeholder="ex: 828 Noyes St" name="location" />
+          </Form.Group>
+          <InputGroup className="mb-3">
+            <InputGroup.Text>Seats and Date</InputGroup.Text>
+            <Form.Control
+              aria-label="Date"
+              placeholder="Date (ex. Jan 1)"
+              name="date"
+            />
+            <Form.Control aria-label="Seats" placeholder="Seats" name="seats" />
+          </InputGroup>
+          <Form.Group className="mb-3" controlId="formContact">
+            <Form.Label>Contact</Form.Label>
+            <Form.Control placeholder="ex. (123)-456-7890" name="contact" />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+          {/* <p>{percent} % done</p> */}
+        </Form>
+      </div>
+    );
+  }
+  else {
+    return <h1>Sign to create a new activity</h1>
+  }
 };
 
 export default Create_Activity;
