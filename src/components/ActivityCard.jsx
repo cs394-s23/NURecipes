@@ -8,12 +8,14 @@ const ActivityCard = ({ props }) => {
   console.log("Test data in2:", props);
 
   return (
+
     <div className="card-leaderboard">
       <div className="card-header">
         <div className="card-title">{props.name}</div>
         <div className="profile">
           <div className="pic-border">
             <img src={props.profile_pic_url} className="profile-pic" />
+
           </div>
           <div className="card-user">{props.host}</div>
         </div>

@@ -2,7 +2,7 @@
     display: flex;
     margin-bottom: 50px;
     width: 50vw;
-    height: 90vh;
+    max-height: 90vh;
     padding: 10px;
     /* align-items: start; */
     /* align-content: flex-start; */
@@ -18,6 +18,10 @@
 
     /* for big screen */
     max-width: 500px;
+}
+
+.view-details-button {
+    text-align: center;
 }
 
 .card:hover,
@@ -95,8 +99,10 @@
 
 .recipe-image {
     border-radius: 5px;
-    width: 100%;
-    height: 100%;
+    /* width: 100%; */
+    max-width: 525px;
+    max-height: 525px;
+    /* height: 100%; */
     /* max-width: 90%;  */
     object-fit:contain;
 }
