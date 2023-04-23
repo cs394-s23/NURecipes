@@ -11,9 +11,13 @@ import {
   getAuth,
   GoogleAuthProvider,
   onAuthStateChanged,
+  onIdTokenChanged,
   signInWithPopup,
   signOut,
 } from "firebase/auth";
+
+
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -129,12 +133,16 @@ export const useDbUpdate = (path) => {
   return [updateData, result];
 };
 export const signInWithGoogle = () => {
-  signInWithPopup(getAuth(firebase), new GoogleAuthProvider());
+  signInWithPopup(getAuth(), new GoogleAuthProvider());
 };
-const firebaseSignOut = () => signOut(getAuth(firebase));
+const firebaseSignOut = () => signOut(getAuth());
 export { firebaseSignOut as signOut };
+
+export const useUserState = () => useAuthState(getAuth());
+
+
 export const useAuthState = () => {
   const [user, setUser] = useState();
-  useEffect(() => onAuthStateChanged(getAuth(firebase), setUser));
+  useEffect(() => onAuthStateChanged(getAuth(), setUser));
   return [user];
 };

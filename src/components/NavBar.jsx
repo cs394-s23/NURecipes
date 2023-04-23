@@ -5,9 +5,24 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { signInWithGoogle, useUserState, signOut } from "../utilities/firebase.js";
 
+const SignInButton = () => (
+    <button className="btn btn-secondary btn-sm"
+        onClick={() => signInWithGoogle()}>
+      Sign In
+    </button>
+  );
+
+const SignOutButton = () => (
+    <button className="btn btn-secondary btn-sm"
+        onClick={() => signOut()}>
+      Sign Out
+    </button>
+  );
 
 const NavBar = () => {
+    const [user] = useUserState();
     return (
         <Navbar bg="light" expand="lg" className="navigation">
         <Container>
@@ -18,6 +33,7 @@ const NavBar = () => {
               <Nav.Link href="/#">Home</Nav.Link>
               <Nav.Link href="/discover/" data-cy="Discovery">Discover</Nav.Link>
               <Nav.Link href="/create/">Create</Nav.Link>
+              <Nav.Link>{ user ? <SignOutButton /> : <SignInButton /> }</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
