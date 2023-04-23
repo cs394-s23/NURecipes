@@ -27,7 +27,6 @@ const SignOutButton = () => (
 );
 
 const NavBar = () => {
-
   const [user] = useUserState();
   return (
     <Navbar bg="light" expand="lg" className="navigation">
@@ -52,6 +51,14 @@ const NavBar = () => {
               </NavDropdown.Item>
             </NavDropdown>
 
+            {user ? (
+              <Nav.Link href="/profile/" data-cy="Profile">
+                Profile
+              </Nav.Link>
+            ) : (
+              <></>
+            )}
+
             <Nav.Link>{user ? <SignOutButton /> : <SignInButton />}</Nav.Link>
           </Nav>
         </Navbar.Collapse>
@@ -59,6 +66,5 @@ const NavBar = () => {
     </Navbar>
   );
 };
-
 
 export default NavBar;
