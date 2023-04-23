@@ -11,7 +11,6 @@ import { useNavigate } from "react-router-dom";
 
 import { useUserState } from "../utilities/firebase.js";
 
-
 const Create_Activity = ({ data }) => {
   const [veggie, setVeggie] = useState(false);
   const [vegan, setVegan] = useState(false);
@@ -52,10 +51,9 @@ const Create_Activity = ({ data }) => {
 
     pushDb(test, "Activities/");
 
-    // navigate(`/discover/`);
+    navigate(`/discover/`);
   };
-  
-  
+
   const [user] = useUserState();
 
   //need title, picture, ingredients, steps, cost, time
@@ -92,9 +90,8 @@ const Create_Activity = ({ data }) => {
         </Form>
       </div>
     );
-  }
-  else {
-    return <h1>Sign to create a new activity</h1>
+  } else {
+    return <h1 className="sign-in">Sign to create a new activity</h1>;
   }
 };
 

@@ -228,7 +228,7 @@ const Create_Post = ({ data }) => {
       </div>
     );
   } else {
-    return <h1>Sign to create a new activity</h1>;
+    return <h1 className="sign-in">Sign to create a new activity</h1>;
   }
 };
 
