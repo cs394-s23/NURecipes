@@ -9,7 +9,7 @@ import storage from "../utilities/firebase.js";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 
-const Create = ({ data }) => {
+const Create_Post = ({ data }) => {
   const [veggie, setVeggie] = useState(false);
   const [vegan, setVegan] = useState(false);
   const [glutenFree, setGlutenFree] = useState(false);
@@ -208,4 +208,4 @@ const Create = ({ data }) => {
   );
 };
 
-export default Create;
+export default Create_Post;

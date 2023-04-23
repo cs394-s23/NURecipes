@@ -17,7 +17,13 @@ const NavBar = () => {
             <Nav className="me-auto">
               <Nav.Link href="/#">Home</Nav.Link>
               <Nav.Link href="/discover/" data-cy="Discovery">Discover</Nav.Link>
-              <Nav.Link href="/create/">Create</Nav.Link>
+
+              <NavDropdown title = "Create" id= "create">
+                <NavDropdown.Item href="/create_post/"> Create Post </NavDropdown.Item>
+                <NavDropdown.Item href="/create_activity/"> Create Activity </NavDropdown.Item>
+              </NavDropdown>
+
+              
             </Nav>
           </Navbar.Collapse>
         </Container>
