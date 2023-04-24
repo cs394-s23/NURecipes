@@ -30,6 +30,7 @@ const NavBar = () => {
   const [user] = useUserState();
   return (
     <Navbar bg="light" expand="lg" className="navigation">
+      {/* not sure why this would break anything? */}
       <Container>
         <Navbar.Brand href="/#">NURecipes</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
