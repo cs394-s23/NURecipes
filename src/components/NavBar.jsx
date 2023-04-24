@@ -31,6 +31,7 @@ const NavBar = () => {
   const [user] = useUserState();
   return (
     <Navbar bg="light" expand="lg" className="navigation">
+      {/* not sure why this would break anything? */}
       <Container>
         <a href="/#">
           <img src="/logo.png" alt="logo" className="logo" height="72"/>
