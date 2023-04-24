@@ -24,106 +24,153 @@ const Profile = () => {
     // save uid for later use
     var uid = authData.currentUser.uid;
 
-    return (<div className="container">
-    <div className="row gutters">
-    <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-    <div className="card h-100">
-        <div className="card-body">
-            <div className="account-settings">
-                <div className="user-profile">
-                    <div className="user-avatar">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin" />
+    return (
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-10 col-xl-8 mx-auto">
+            <div className="my-4">
+              <ul className="nav nav-tabs mb-4" id="myTab" role="tablist"></ul>
+              <form>
+                <div className="row mt-5 align-items-center">
+                  <div className="col-md-3 text-center mb-5">
+                    <div className="avatar avatar-xl">
+                      <img
+                        src={photoURL}
+                        alt="..."
+                        className="avatar-img rounded-circle"
+                      />
                     </div>
-                    <h5 className="user-name">Yuki Hayashi</h5>
-                    <h6 className="user-email">yuki@Maxwell.com</h6>
+                  </div>
+                  <div className="col">
+                    <div className="row align-items-center">
+                      <div className="col-md-7">
+                        <h4 className="mb-1">{displayName}</h4>
+                        <p className="small mb-3">
+                          <span className="badge badge-dark">Evanston</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div className="row mb-4">
+                      <div className="col-md-7">
+                        <p className="text-muted">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit. Mauris blandit nisl ullamcorper, rutrum metus
+                          in, congue lectus. In hac habitasse platea dictumst.
+                          Cras urna quam, malesuada vitae risus at, pretium
+                          blandit sapien.
+                        </p>
+                      </div>
+                      <div className="col">
+                        <p className="small mb-0 text-muted">
+                          {"put address here"}
+                        </p>
+                        <p className="small mb-0 text-muted">{phoneNumber}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="about">
-                    <h5>About</h5>
-                    <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
+                <hr className="my-4" />
+                <div className="form-row">
+                  <div className="form-group col-md-6">
+                    <label for="firstname">Username</label>
+                    <input
+                      type="text"
+                      id="firstname"
+                      className="form-control"
+                      placeholder={displayName}
+                    />
+                  </div>
                 </div>
+                <div className="form-group">
+                  <label for="inputEmail4">Email</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="inputEmail4"
+                    placeholder={email}
+                  />
+                </div>
+                <div className="form-group">
+                  <label for="inputAddress5">Major</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="inputAddress5"
+                    placeholder=""
+                  />
+                </div>
+                <div className="form-group">
+                  <label for="inputAddress5">Favorite Dining Hall</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="inputAddress5"
+                    placeholder=""
+                  />
+                </div>
+                <div className="form-row">
+                  <div className="form-group col-md-6">
+                    <label for="inputCompany5">Dorm</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="inputCompany5"
+                      placeholder=""
+                    />
+                  </div>
+                </div>
+                <hr className="my-4" />
+                <div className="row mb-4">
+                  <div className="col-md-6">
+                    <div className="form-group">
+                      <label for="inputPassword4">Old Password</label>
+                      <input
+                        type="password"
+                        className="form-control"
+                        id="inputPassword5"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label for="inputPassword5">New Password</label>
+                      <input
+                        type="password"
+                        className="form-control"
+                        id="inputPassword5"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label for="inputPassword6">Confirm Password</label>
+                      <input
+                        type="password"
+                        className="form-control"
+                        id="inputPassword6"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <p className="mb-2">Password requirements</p>
+                    <p className="small text-muted mb-2">
+                      To create a new password, you have to meet all of the
+                      following requirements:
+                    </p>
+                    <ul className="small text-muted pl-4 mb-0">
+                      <li>Minimum 8 character</li>
+                      <li>At least one special character</li>
+                      <li>At least one number</li>
+                      <li>Can’t be the same as a previous password</li>
+                    </ul>
+                  </div>
+                </div>
+                <button type="submit" className="btn btn-primary">
+                  Save Change
+                </button>
+              </form>
             </div>
+          </div>
         </div>
-    </div>
-    </div>
-    <div className="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-    <div className="card h-100">
-        <div className="card-body">
-            <div className="row gutters">
-                <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <h6 className="mb-2 text-primary">Personal Details</h6>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div className="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" className="form-control" id="fullName" placeholder="Enter full name" />
-                    </div>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div className="form-group">
-                        <label for="eMail">Email</label>
-                        <input type="email" className="form-control" id="eMail" placeholder="Enter email ID" />
-                    </div>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div className="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="text" className="form-control" id="phone" placeholder="Enter phone number" />
-                    </div>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div className="form-group">
-                        <label for="website">Website URL</label>
-                        <input type="url" className="form-control" id="website" placeholder="Website url" />
-                    </div>
-                </div>
-            </div>
-            <div className="row gutters">
-                <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <h6 className="mt-3 mb-2 text-primary">Address</h6>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div className="form-group">
-                        <label for="Street">Street</label>
-                        <input type="name" className="form-control" id="Street" placeholder="Enter Street" />
-                    </div>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div className="form-group">
-                        <label for="ciTy">City</label>
-                        <input type="name" className="form-control" id="ciTy" placeholder="Enter City" />
-                    </div>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div className="form-group">
-                        <label for="sTate">State</label>
-                        <input type="text" className="form-control" id="sTate" placeholder="Enter State" />
-                    </div>
-                </div>
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div className="form-group">
-                        <label for="zIp">Zip Code</label>
-                        <input type="text" className="form-control" id="zIp" placeholder="Zip Code" />
-                    </div>
-                </div>
-            </div>
-            <div className="row gutters">
-                <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div className="text-right">
-                        <button type="button" id="submit" name="submit" className="btn btn-secondary">Cancel</button>
-                        <button type="button" id="submit" name="submit" className="btn btn-primary">Update</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    )
-
+      </div>
+    );
   }
 };
 
 export default Profile;
-
-
