@@ -30,10 +30,33 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.container {
+.profile-container {
   margin-top: 10vh;
   min-width: 60vw;
   /* color: #8e9194; */
   background-color: #f4f6f9;
   border-radius: 10px;
 }
+
+.user-stuff {
+    /* border: 1px solid red; */
+    display:flex;
+
+}
+
+.sign-in-out {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid green; */
+    width: 100%;
+    height: 100%;
+
+    /* position: relative;
+    float: right; */
+}
+
+
+
+
