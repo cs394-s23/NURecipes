@@ -36,7 +36,7 @@ const Discover = ({data}) => {
                 <h1 style={{color:"white"}}> This week's Top 5 Recipes are: </h1>
             </div>
             <div className = 'activity-feed'>
-                {filteredData.slice(0,6).map((recipe, index) => <LeaderboardCard props={recipe} key={index} />)}
+                {filteredData.slice(0,5).map((recipe, index) => <LeaderboardCard props={recipe} key={index} />)}
             </div>
 
             <div className = "activityboard">
