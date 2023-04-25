@@ -78,7 +78,7 @@ const PostCard = (props) => {
         <div className="card-rating">
           <p className="rating">
             {" "}
-            <strong>Cook time: </strong> {props.cook_time}
+            <strong>Cook time: </strong> {props.cook_time} minutes
           </p>
           <p className="rating">
             {" "}
