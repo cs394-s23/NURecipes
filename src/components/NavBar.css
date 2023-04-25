@@ -16,6 +16,10 @@
 
 .nav-container {
   margin-top: 0;
+  /* border: 2px dotted orange; */
+  display: flex;
+  justify-content: space-between;
+
   /* background-color: blue; */
 }
 
@@ -42,14 +46,37 @@
   }
 }
 
-/* #basic-navbar-nav {
-  margin-top: 0px;
-} */
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* border: 1px solid red; */
+}
 
 .navbar {
     display: flex;
     padding-bottom: 13px;
-    
 
 }
+
+.user-section {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+    
+}
+
+.left-navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-buttons {
+    margin-left: 25px;
+}
+
+.sign-in-out {
+    margin-left: 50px;
+}
+
 

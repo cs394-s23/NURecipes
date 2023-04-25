@@ -55,7 +55,7 @@ const Profile = () => {
 
     if (data != null) {
       return (
-        <div className="container" onSubmit={onFormSubmit}>
+        <div className="profile-container" onSubmit={onFormSubmit}>
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 col-xl-8 mx-auto">
               <div className="my-4">
@@ -153,7 +153,7 @@ const Profile = () => {
       );
     } else {
       return (
-        <div className="container" onSubmit={onFormSubmit}>
+        <div className="profile-container" onSubmit={onFormSubmit}>
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 col-xl-8 mx-auto">
               <div className="my-4">
