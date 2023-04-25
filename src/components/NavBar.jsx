@@ -40,6 +40,9 @@ const NavBar = () => {
   return (
     <Navbar bg="light" expand="lg" className="navigation">
       <Container className="nav-container">
+        <a href="/#">
+          <img src="/logo.png" alt="logo" className="logo" height="72"/>
+        </a>
         <Navbar.Brand href="/#">NURecipes</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
