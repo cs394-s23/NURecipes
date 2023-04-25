@@ -91,6 +91,7 @@ const Create_Post = ({ data }) => {
         },
         (err) => console.log(err),
         () => {
+          navigate(`/#`);
           // download url
           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
             console.log(url);
@@ -114,8 +115,6 @@ const Create_Post = ({ data }) => {
             };
 
             pushDb(test, "Recipes/");
-
-            navigate(`/#`);
           });
         }
       );

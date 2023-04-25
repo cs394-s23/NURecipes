@@ -16,16 +16,20 @@ body {
   /* border: magenta; */
 }
 
+.feed-homepage {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
 .feed {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .tagButtons {
-    display: flex;
-    /* align-content: center; */
-    justify-content: center;
-    /* background-color: #222222; */
-    border-radius: 10px;
-    padding: 7px;
+  display: flex;
+  /* align-content: center; */
+  justify-content: center;
+  /* background-color: #222222; */
+  border-radius: 10px;
+  padding: 7px;
 }
-

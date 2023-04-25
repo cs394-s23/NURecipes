@@ -7,9 +7,11 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import Modal from "./PopUpModal.jsx";
 import { updateLikes } from "../utilities/firebase";
 import { useDbData } from "../utilities/firebase";
+import { getAuth } from "@firebase/auth";
 // props: POST CLASS: title, caption, image, recipe, author...
 // also, probably give user who posted?
 const PostCard = (props) => {
+  let authData = getAuth();
   console.log("postcard props", props);
 
   props = props.props;
@@ -51,8 +53,10 @@ const PostCard = (props) => {
                 size="lg"
                 style={{ color: "red" }}
                 onClick={() => {
-                  setLiked(false);
-                  updateLikes(props.key, false);
+                  if (authData.currentUser != null) {
+                    setLiked(false);
+                    updateLikes(props.key, false);
+                  }
                 }}
               />
             ) : (
@@ -60,8 +64,10 @@ const PostCard = (props) => {
                 icon={faHeart}
                 size="lg"
                 onClick={() => {
-                  setLiked(true);
-                  updateLikes(props.key, true);
+                  if (authData.currentUser != null) {
+                    setLiked(true);
+                    updateLikes(props.key, true);
+                  }
                 }}
               />
             )}

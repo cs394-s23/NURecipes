@@ -1,8 +1,10 @@
 .card-leaderboard {
   display: flex;
   margin-bottom: 50px;
-  min-width: 15vw;
-  max-width: 20vw;
+  min-width: 20vw;
+  /* min-height: 30vh; */
+  max-height: 35vh;
+  /* max-width: 20vw; */
   /* min-height: 38vh; */
   margin-right: 50px;
   padding: 10px;
@@ -20,6 +22,14 @@
   -moz-osx-font-smoothing: grayscale;
   transition-duration: 0.3s;
   transition-property: transform;
+  overflow: hidden;
+}
+
+@media (max-width: 500px) {
+  .card-leaderboard {
+    min-width: 50vw;
+    min-height: 40vh;
+  }
 }
 
 .card-leaderboard:hover,

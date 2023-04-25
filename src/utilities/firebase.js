@@ -14,6 +14,7 @@ import {
   onIdTokenChanged,
   signInWithPopup,
   signOut,
+  signInWithRedirect
 } from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -138,12 +139,13 @@ export const useDbUpdate = (path) => {
   return [updateData, result];
 };
 export const signInWithGoogle = () => {
-  signInWithPopup(getAuth(), new GoogleAuthProvider());
+  signInWithRedirect(getAuth(), new GoogleAuthProvider());
   // window.location.reload(false);
 };
 
 const firebaseSignOut = () => {
   signOut(getAuth());
+  window.location.reload();
 };
 
 export { firebaseSignOut as signOut };
