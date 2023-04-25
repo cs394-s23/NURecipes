@@ -4,6 +4,7 @@ import "./NavBar.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import Button from "react-bootstrap/Button";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import {
   signInWithGoogle,
@@ -11,55 +12,73 @@ import {
   signOut,
 } from "../utilities/firebase.js";
 
-const SignInButton = () => (
-  <button
-    className="btn btn-secondary btn-sm"
-    onClick={() => signInWithGoogle()}
-  >
-    Sign In
-  </button>
-);
-
-const SignOutButton = () => (
-  <button className="btn btn-secondary btn-sm" onClick={() => signOut()}>
-    Sign Out
-  </button>
-);
-
 const NavBar = () => {
+  const SignInButton = () => (
+    <Nav.Link
+      // className="btn btn-secondary btn-sm"
+      onClick={() => signInWithGoogle()}
+      // type="submit"
+      className="nav-link"
+    >
+      Sign In
+    </Nav.Link>
+  );
+
+  const SignOutButton = () => (
+    <Nav.Link
+      // className="btn btn-secondary btn-sm"
+      onClick={() => signOut()}
+      // type="submit"
+      href="/#"
+      className="nav-link"
+    >
+      Sign Out
+    </Nav.Link>
+  );
+
   const [user] = useUserState();
   return (
     <Navbar bg="light" expand="lg" className="navigation">
-      <Container>
+      <Container className="nav-container">
         <Navbar.Brand href="/#">NURecipes</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/#">Home</Nav.Link>
-            <Nav.Link href="/discover/" data-cy="Discovery">
+            <Nav.Link href="/#" className="nav-link">
+              Home
+            </Nav.Link>
+            <Nav.Link
+              href="/discover/"
+              className="nav-link"
+              data-cy="Discovery"
+            >
               Discover
             </Nav.Link>
 
-            <NavDropdown title="Create" id="create">
-              <NavDropdown.Item href="/create_post/">
-                {" "}
-                Create Post{" "}
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/create_activity/">
-                {" "}
-                Create Activity{" "}
-              </NavDropdown.Item>
-            </NavDropdown>
+            {user ? (
+              <NavDropdown title="Create">
+                <NavDropdown.Item href="/create_post/" className="nav-link">
+                  {" "}
+                  Create Post{" "}
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/create_activity/" className="nav-link">
+                  {" "}
+                  Create Activity{" "}
+                </NavDropdown.Item>
+              </NavDropdown>
+            ) : (
+              <></>
+            )}
 
             {user ? (
-              <Nav.Link href="/profile/" data-cy="Profile">
+              <Nav.Link href="/profile/" data-cy="Profile" className="nav-link">
                 Profile
               </Nav.Link>
             ) : (
               <></>
             )}
 
-            <Nav.Link>{user ? <SignOutButton /> : <SignInButton />}</Nav.Link>
+            {user ? <SignOutButton /> : <SignInButton />}
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -68,5 +87,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-

@@ -16,9 +16,6 @@ import {
   signOut,
 } from "firebase/auth";
 
-
-
-
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 // Your web app’s Firebase configuration
@@ -103,6 +100,14 @@ export const pushDb = (data, path) => {
   var key = set(ref(db, path + newPostKey), data);
 };
 
+export const pushUsertoDb = (data, path, uid) => {
+  // var lastIndex = 1;
+  // updates['/' + path + lastIndex] = data;
+  // return update(ref(db), updates);
+
+  var key = set(ref(db, path + uid), data);
+};
+
 
 export const updateLikes = (postId, like) => {
   const postRef = ref(db, '/Recipes/' + postId);
@@ -134,8 +139,13 @@ export const useDbUpdate = (path) => {
 };
 export const signInWithGoogle = () => {
   signInWithPopup(getAuth(), new GoogleAuthProvider());
+  // window.location.reload(false);
 };
-const firebaseSignOut = () => signOut(getAuth());
+
+const firebaseSignOut = () => {
+  signOut(getAuth());
+};
+
 export { firebaseSignOut as signOut };
 
 export const useUserState = () => useAuthState(getAuth());
@@ -151,3 +161,4 @@ export const useAuthState = () => {
   }
   return [user];
 };
+
