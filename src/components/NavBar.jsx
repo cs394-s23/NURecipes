@@ -41,13 +41,12 @@ const NavBar = () => {
     <Navbar bg="light" expand="lg" className="navigation">
       <Container className="nav-container">
         <a href="/#">
-          <img src="/logo.png" alt="logo" className="logo" height="72"/>
+          <img src="/logo.png" alt="logo" className="logo" height="72" />
         </a>
         <Navbar.Brand href="/#">NURecipes</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          
-          <Nav className="me-auto">
+          <Nav className="me-auto special">
             <div className="left-navbar">
               <Nav.Link href="/#" className="nav-link">
                 Home
@@ -69,28 +68,31 @@ const NavBar = () => {
                       {" "}
                       Create Post{" "}
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="/create_activity/" className="nav-link">
+                    <NavDropdown.Item
+                      href="/create_activity/"
+                      className="nav-link"
+                    >
                       {" "}
                       Create Activity{" "}
                     </NavDropdown.Item>
                   </NavDropdown>
-                    <div className="right-navbar">
-                    <Nav.Link href="/profile/" data-cy="Profile" className="nav-link nav-buttons">
-                    Profile
+                  <div className="right-navbar">
+                    <Nav.Link
+                      href="/profile/"
+                      data-cy="Profile"
+                      className="nav-link nav-buttons"
+                    >
+                      Profile
                     </Nav.Link>
-                  
+                  </div>
                 </div>
-               </div>
               ) : (
                 <></>
               )}
-        <div className="sign-in-out nav-buttons">
-          {user ? <SignOutButton /> : <SignInButton />}
-        </div>
-
-      </div>
-
-            
+              <div className="sign-in-out nav-buttons">
+                {user ? <SignOutButton /> : <SignInButton />}
+              </div>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>

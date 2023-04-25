@@ -80,18 +80,18 @@ const Create_Post = ({ data }) => {
       const storageRef = ref(storage, `/files/${file.name}`);
       console.log(storageRef);
       const uploadTask = uploadBytesResumable(storageRef, file);
+      navigate(`/#`);
 
       uploadTask.on(
         "state_changed",
         (snapshot) => {
-          const percent = Math.round(
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-          ); // update progress
-          setPercent(percent);
+          // const percent = Math.round(
+          //   (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          // ); // update progress
+          // setPercent(percent);
         },
         (err) => console.log(err),
         () => {
-          navigate(`/#`);
           // download url
           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
             console.log(url);
