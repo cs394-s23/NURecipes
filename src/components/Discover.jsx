@@ -25,7 +25,7 @@ const Discover = ({data}) => {
     const filteredData = sortedData.filter(post => post.date_posted > new Date().getTime() - 604800000)
 
 
-    console.log(filteredData)
+    // console.log(filteredData)
     // console.log("post-sort data: ", data);
     // console.log("sorted data: ", sortedData);
     // console.log("all activities: ", data.Activities)
@@ -33,10 +33,10 @@ const Discover = ({data}) => {
     return (
         <div className = "feed">
             <div className = "leaderboard">
-                <h1 style={{color:"white"}}> This week's leaders are: </h1>
+                <h1 style={{color:"white"}}> This week's Top 5 Recipes are: </h1>
             </div>
             <div className = 'activity-feed'>
-                {filteredData.map((recipe, index) => <LeaderboardCard props={recipe} key={index} />)}
+                {filteredData.slice(0,6).map((recipe, index) => <LeaderboardCard props={recipe} key={index} />)}
             </div>
 
             <div className = "activityboard">
